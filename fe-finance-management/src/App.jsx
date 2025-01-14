@@ -5,6 +5,9 @@ import Sidebar from "./components/Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Employees from "./pages/Employees";
+import Expense from "./pages/Expense";
+import TransactionData from "./pages/TransactionData";
+import ExpenseData from "./pages/ExpenseData";
 
 function App() {
   const [employee, setEmployee] = useState([
@@ -69,6 +72,7 @@ function App() {
       birth: "2008-10-10",
     },
   ]);
+
   return (
     <BrowserRouter className="w-full h-full">
       <div className="flex">
@@ -81,6 +85,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard employee={employee} />} />
             <Route path="/transaction" element={<Transaction />} />
+            <Route path="/transactionData" element={<TransactionData />} />
+            <Route path="/expense" element={<Expense />} />
+            <Route path="/expenseData" element={<ExpenseData />} />
             <Route
               path="/employee"
               element={<Employees employee={employee} />}
